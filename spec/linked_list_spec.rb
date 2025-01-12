@@ -60,29 +60,35 @@ RSpec.describe LinkedList do
 
   it 'can find elements' do
     list = LinkedList.new
-    list.append("plop")
-    list.append("suu")
-    list.append("dop")
+    list.append("deep")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
 
-    expect(list.find(1, 2)).to eq("suu dop")
+    expect(list.find(2, 1)).to eq("shi")
+    expect(list.find(1, 3)).to eq("woo shi shu")
   end
 
   it 'can check if it includes a value' do
     list = LinkedList.new
-    list.append("plop")
-    list.append("suu")
+    list.append("deep")
+    list.append("woo")
 
-    expect(list.includes?("plop")).to be true
-    expect(list.includes?("dop")).to be false
+    expect(list.includes?("deep")).to be true
+    expect(list.includes?("dep")).to be false
   end
 
   it 'can pop the last element' do
     list = LinkedList.new
-    list.append("plop")
-    list.append("suu")
-    list.append("dop")
+    list.append("deep")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
 
-    expect(list.pop).to eq("dop")
-    expect(list.to_string).to eq("plop suu")
+    expect(list.pop).to eq("blop")
+    expect(list.pop).to eq("shu")
+    expect(list.to_string).to eq("deep woo shi")
   end
 end
