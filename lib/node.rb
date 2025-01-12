@@ -3,6 +3,6 @@ class Node
 
   def initialize(data)
     @data = data
-    @next_node = nil #set to nil by default
+    @next_node = nil # set to nil by default
   end
 end
