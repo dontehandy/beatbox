@@ -1,5 +1,4 @@
-require 'rspec'
-require './lib/linked_list'
+require './spec/spec_helper'
 
 RSpec.describe LinkedList do
   it 'exists and has attributes' do
@@ -11,7 +10,7 @@ RSpec.describe LinkedList do
 
   it 'can append nodes' do
     list = LinkedList.new
-    list.append("doop")
+    list.append("doop") #the sounds of the beatbox 
 
     expect(list.head.data).to eq("doop")
     expect(list.head.next_node).to be_nil

@@ -1,5 +1,4 @@
-require 'rspec'
-require './lib/node'
+require './spec/spec_helper'
 
 RSpec.describe Node do
   it 'exists and has attributes' do
