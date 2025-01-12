@@ -58,4 +58,46 @@ class LinkedList
     end
     elements.join(' ')
   end
+
+  def find(position, elements)
+    current = @head
+    position.times do
+      current = current.next_node
+    end
+
+    result = []
+    elements.times do
+      result << current.data
+      current = current.next_node
+    end
+    result.join(' ')
+  end
+
+  def includes?(data)
+    current = @head
+    while current
+      return true if current.data == data
+      current = current.next_node
+    end
+    false
+  end
+
+  def pop
+    return nil if @head.nil?
+
+    if @head.next_node.nil?
+      data = @head.data
+      @head = nil
+      return data
+    end
+
+    current = @head
+    while current.next_node.next_node
+      current = current.next_node
+    end
+
+    data = current.next_node.data
+    current.next_node = nil
+    data
+  end
 end
