@@ -1,0 +1,7 @@
+*.log
+*.tmp
+/node_modules
+/coverage
+
+#to exclude unnecessary files
+#the above were chosen as examples and will be updated as needed
