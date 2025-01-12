@@ -7,10 +7,7 @@ class LinkedList
     @head = nil
   end
 
-  def append(data) 
-    # creates a new node with the data that we pass into this 
-    # method and adds it to the end of the linked list
-
+  def append(data)
     if @head.nil?
       @head = Node.new(data)
     else
@@ -23,7 +20,6 @@ class LinkedList
   end
 
   def count
-    # tells us how many nodes are in the list
     count = 0
     current = @head
     while current
@@ -34,8 +30,6 @@ class LinkedList
   end
 
   def to_string
-    # generates a string containing the data from every node in the list, 
-    # separated by spaces
     elements = []
     current = @head
     while current
