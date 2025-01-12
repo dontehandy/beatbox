@@ -8,25 +8,30 @@ RSpec.describe LinkedList do
     expect(list.head).to be_nil
   end
 
-  it 'can append the first node' do
+  it 'can append nodes' do
     list = LinkedList.new
     list.append("doop")
 
-    expect(list.head.data).to eq("doop") #head.data is the data of the head node
+    expect(list.head.data).to eq("doop")
     expect(list.head.next_node).to be_nil
+
+    list.append("deep")
+    expect(list.head.next_node.data).to eq("deep")
   end
 
   it 'can count nodes' do
     list = LinkedList.new
     list.append("doop")
+    list.append("deep")
 
-    expect(list.count).to eq(1)
+    expect(list.count).to eq(2)
   end
 
   it 'can convert to string' do
     list = LinkedList.new
     list.append("doop")
+    list.append("deep")
 
-    expect(list.to_string).to eq("doop")
+    expect(list.to_string).to eq("doop deep")
   end
 end
